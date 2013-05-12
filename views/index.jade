@@ -1,8 +1,12 @@
 extends layout
 
 block content
+
+	embed(style='visibility:hidden', src='/audio/thequietplace.mp3')
+
 	div.message
-		div.message-container 
-			h1 Dear Mom.
-			span#message-body
-				p I like trains.
+		div.message-container
+			h1 Dear Mom,
+			div.message-body
+				p Just a couple of Mother's Day thanks from your two sons . . .
+			button#next-btn.btn.btn-info.btn-large.btn-block Continue
