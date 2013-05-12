@@ -9,6 +9,8 @@ var currStep = 0;
 
 $(document).ready(function(){
 
+	displayWindow();
+
 	$("#next-btn").click(function(){
 		currStep++;
 		launchStep(currStep);
@@ -16,11 +18,13 @@ $(document).ready(function(){
 
 });
 
+function displayWindow(){
+	$(".message").fadeIn(700);
+}
+
 function launchStep(currStep) {
 
-	if (currStep === 9) {
-		$("#next-btn").remove();
-	}
+	if (currStep === 9) $("#next-btn").remove();
 
 	updateBackground(currStep);
 	updateMessage(currStep);
@@ -38,7 +42,7 @@ function updateMessage(currStep) {
 		displayMessage("We didn't want to make any old thank you card, so we decided to try some thing different.");
 
 	else if (currStep === 2)
-		displayMessage("Thank you for taking us to new places and inspiring us to achieve new heights.");
+		displayMessage("Thank you for taking us to new places and inspiring us to reach new heights.");
 
 	else if (currStep === 3)
 		displayMessage("And for the little, everyday things that you do for us at home and school.");
@@ -59,10 +63,12 @@ function updateMessage(currStep) {
 		displayMessage("So thanks for being the best mom we could have asked for.");
 
 	else if (currStep === 9)
-		displayMessage("Happy Mother's Day, and we love you. <br><br><span style='float:right;'>- Ray & Ian</span>");
+		displayMessage("And Happy Mother's Day. We love you very much. <br><br><span style='float:right;'>- Ray & Ian</span>");
 
 }
 
 function displayMessage(message){
+	$(".message-body p").css("display", "none");
 	$(".message-body p").html(message);
+	$(".message-body p").fadeIn(700);
 }
